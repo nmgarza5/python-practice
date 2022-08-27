@@ -10,13 +10,16 @@ import unittest
 
 def add_it_up(n):
     # TODO: Your code goes here!
-    return n
-
+    if type(n) != int:
+        return 0
+    return sum(range(n+1))
 
 class IntegerSumTestCase(unittest.TestCase):
     def test_to_ten(self):
         results = [0, 1, 3, 6, 10, 15, 21, 28, 36, 45]
         for n in range(10):
+
+            print('test')
             self.assertEqual(add_it_up(n), results[n])
 
     def test_string(self):
